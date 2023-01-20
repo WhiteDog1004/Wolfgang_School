@@ -1,2 +1,3 @@
-# Wolfgang_School
-SmashLegends-Quiz
+## Wolfgang_School
+- SmashLegends-Quiz
+- Nextjs
