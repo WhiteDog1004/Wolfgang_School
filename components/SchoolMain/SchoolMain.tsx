@@ -1,3 +1,5 @@
+import { MainContainer } from "./SchoolMain.styled";
+
 export const SchoolMain = () => {
-	return <>Test</>;
+	return <MainContainer>Text</MainContainer>;
 };
