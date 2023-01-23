@@ -2,6 +2,11 @@ import styled from "styled-components";
 import { checkTypes } from "./Chat.types";
 
 export const ChatContainer = styled.div`
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	width: 100%;
 	max-width: 700px;
 	margin: 0 auto;
 	padding: 20px;
@@ -10,20 +15,24 @@ export const ChatContainer = styled.div`
 export const ChatBox = styled.div`
 	position: relative;
 	width: 100%;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	background-color: #0000004d;
 	border: 1px solid white;
 	border-top-right-radius: 20px;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
-	display: flex;
-	align-items: center;
 	img {
-		margin: 20px;
+		margin-right: 20px;
 		border: 2px solid white;
 		border-radius: 10041004px;
 	}
 `;
 export const ChattingBlock = styled.div`
-	padding: 20px;
+	min-width: 160px;
+	padding: 20px 0;
 `;
 export const ButtonBox = styled.div`
 	position: absolute;
