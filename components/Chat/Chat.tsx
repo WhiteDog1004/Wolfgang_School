@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { openingChatting } from "./Chat.const";
 import {
 	ButtonBox,
@@ -15,13 +15,16 @@ export const Chat = () => {
 	const [nextCheck, setNextCheck] = useState<boolean>(false);
 	const [prevCheck, setPrevCheck] = useState<boolean>(false);
 
-	const addNumber = (calc: string) => {
-		if (calc === "add") {
-			setChatBtnCurrent(chatBtnCurrent + 1);
-		} else {
-			setChatBtnCurrent(chatBtnCurrent - 1);
-		}
-	};
+	const addNumber = useCallback(
+		(calc: string) => {
+			if (calc === "add") {
+				setChatBtnCurrent(chatBtnCurrent + 1);
+			} else {
+				setChatBtnCurrent(chatBtnCurrent - 1);
+			}
+		},
+		[chatBtnCurrent]
+	);
 
 	useEffect(() => {
 		if (chatBtnCurrent === openingChatting.length - 1) {
@@ -45,6 +48,7 @@ export const Chat = () => {
 					width={100}
 					height={100}
 					alt=""
+					priority
 				/>
 				<ChattingBlock>{openingChatting[chatBtnCurrent]}</ChattingBlock>
 				<ButtonBox>
