@@ -9,8 +9,9 @@ import {
 	NextButton,
 	PrevButton,
 } from "./Chat.styled";
+import { NextPageProps } from "./Chat.types";
 
-export const Chat = () => {
+export const Chat = ({ setNextPageCheck }: NextPageProps) => {
 	const [chatBtnCurrent, setChatBtnCurrent] = useState<number>(0);
 	const [nextCheck, setNextCheck] = useState<boolean>(false);
 	const [prevCheck, setPrevCheck] = useState<boolean>(false);
@@ -29,8 +30,10 @@ export const Chat = () => {
 	useEffect(() => {
 		if (chatBtnCurrent === openingChatting.length - 1) {
 			setNextCheck(true);
+			setNextPageCheck(true);
 		} else {
 			setNextCheck(false);
+			setNextPageCheck(false);
 		}
 		if (0 === chatBtnCurrent) {
 			setPrevCheck(true);

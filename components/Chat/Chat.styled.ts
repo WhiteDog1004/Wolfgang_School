@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { checkTypes } from "./Chat.types";
+import { CheckTypes } from "./Chat.types";
 
 export const ChatContainer = styled.div`
 	position: absolute;
@@ -20,7 +20,6 @@ export const ChatBox = styled.div`
 	align-items: center;
 	padding: 20px;
 	background-color: #0000004d;
-	border: 1px solid white;
 	border-top-right-radius: 20px;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
@@ -41,7 +40,7 @@ export const ButtonBox = styled.div`
 	width: 100px;
 	height: 35px;
 `;
-export const PrevButton = styled.button<checkTypes>`
+export const PrevButton = styled.button<CheckTypes>`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -55,12 +54,12 @@ export const PrevButton = styled.button<checkTypes>`
 	&:hover {
 		color: ${({ prevCheck }) => (prevCheck ? "#ffffff" : "red")};
 		background-color: ${({ prevCheck }) =>
-			prevCheck ? "transparent" : "#111111"};
+			prevCheck ? "transparent" : "#1111114d"};
 		transition: background-color 0.25s;
 		cursor: ${({ prevCheck }) => (prevCheck ? "default" : "pointer")};
 	}
 `;
-export const NextButton = styled.button<checkTypes>`
+export const NextButton = styled.button<CheckTypes>`
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -74,7 +73,7 @@ export const NextButton = styled.button<checkTypes>`
 	&:hover {
 		color: ${({ nextCheck }) => (nextCheck ? "#ffffff" : "red")};
 		background-color: ${({ nextCheck }) =>
-			nextCheck ? "transparent" : "#111111"};
+			nextCheck ? "transparent" : "#1111114d"};
 		transition: background-color 0.25s;
 		cursor: ${({ nextCheck }) => (nextCheck ? "default" : "pointer")};
 	}
