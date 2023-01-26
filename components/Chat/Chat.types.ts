@@ -1,9 +1,9 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
 export interface CheckTypes {
-	prevCheck?: boolean;
-	nextCheck?: boolean;
+  prevCheck?: boolean;
+  nextCheck?: boolean;
 }
 export interface NextPageProps {
-	setNextPageCheck: Dispatch<SetStateAction<boolean>>;
+  setNextPageCheck: Dispatch<SetStateAction<boolean>>;
 }

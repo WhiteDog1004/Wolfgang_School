@@ -1,3 +1,3 @@
 export interface NextCheckProps {
-	nextPageCheck: boolean;
+  nextPageCheck: boolean;
 }
