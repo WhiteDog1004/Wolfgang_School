@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import {
   ContentCorp,
   GoNextPageButton,
@@ -11,6 +12,11 @@ import {
 import { NextCheckProps } from './SchoolMain.types';
 
 export const SchoolMain = ({ nextPageCheck }: NextCheckProps) => {
+  const router = useRouter();
+
+  const goSchool = () => {
+    router.push('/school');
+  };
   return (
     <MainContainer>
       <SmashLogo>
@@ -25,7 +31,7 @@ export const SchoolMain = ({ nextPageCheck }: NextCheckProps) => {
       <ContentCorp>© 5minlab Corp. All rights reserved.</ContentCorp>
       {nextPageCheck && (
         <GoNextPageWrapper>
-          <GoNextPageButton>
+          <GoNextPageButton onClick={goSchool}>
             시험장 입장
             <Image src={'/imgs/Wolfgang.png'} alt='' width={30} height={30} />
           </GoNextPageButton>

@@ -16,10 +16,6 @@ export const Loading = () => {
     timer();
   }, [timer]);
 
-  useEffect(() => {
-    console.log(ranNumber);
-  }, [ranNumber]);
-
   return (
     <LoadingContainer>
       <AnimationImage>
