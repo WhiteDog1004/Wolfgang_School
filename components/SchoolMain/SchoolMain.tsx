@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import {
   ContentCorp,
-  GoNextPageBtn,
+  GoNextPageButton,
+  GoNextPageWrapper,
   MainContainer,
   MainContent,
   MainTitle,
@@ -22,7 +23,14 @@ export const SchoolMain = ({ nextPageCheck }: NextCheckProps) => {
         게임 팬사이트 입니다.
       </MainContent>
       <ContentCorp>© 5minlab Corp. All rights reserved.</ContentCorp>
-      {nextPageCheck && <GoNextPageBtn />}
+      {nextPageCheck && (
+        <GoNextPageWrapper>
+          <GoNextPageButton>
+            시험장 입장
+            <Image src={'/imgs/Wolfgang.png'} alt='' width={30} height={30} />
+          </GoNextPageButton>
+        </GoNextPageWrapper>
+      )}
     </MainContainer>
   );
 };

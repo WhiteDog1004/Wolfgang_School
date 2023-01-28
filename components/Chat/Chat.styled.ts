@@ -24,6 +24,7 @@ export const ChatBox = styled.div`
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   img {
+    min-width: 100px;
     margin-right: 20px;
     border: 2px solid white;
     border-radius: 10041004px;
