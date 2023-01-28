@@ -66,7 +66,7 @@ export const SchoolLobby = () => {
           </ButtonBox>
         </LobbyChatBox>
       </LobbyChatContainer>
-      {chatBtnCurrent > 3 && <Questions />}
+      {chatBtnCurrent > 3 && <Questions chatBtnCurrent={chatBtnCurrent} />}
     </LobbyContainer>
   );
 };

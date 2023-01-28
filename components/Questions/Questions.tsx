@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { QuestionTest } from './Questions.const';
 import {
@@ -11,10 +12,13 @@ import {
   QuestionsTitleNumber,
   ResultButton,
 } from './Questions.styled';
+import { ChatCurrentType } from './Questions.types';
 
-export const Questions = () => {
+export const Questions = ({ chatBtnCurrent }: ChatCurrentType) => {
+  const router = useRouter();
   const [questionCheck, setQuestionCheck] = useState<number>();
   const [resultCheck, setResultCheck] = useState<boolean>(false);
+
   const isClickedQuestion = (index: number, result: number) => () => {
     setQuestionCheck(index);
     if (index === result - 1) {
@@ -23,13 +27,16 @@ export const Questions = () => {
       setResultCheck(false);
     }
   };
-  const resultQuestion = () => {
+
+  const resultQuestion = (chatBtnCurrent: number) => () => {
     if (resultCheck) {
-      console.log('정답!');
-    } else {
-      console.log('틀림!');
+      if (chatBtnCurrent === 7) {
+        router.push('/');
+        setResultCheck(false);
+      }
     }
   };
+
   return (
     <QuestionsContainer>
       {QuestionTest.map((test) => (
@@ -49,8 +56,8 @@ export const Questions = () => {
           ))}
         </QuestionsBox>
       ))}
-      <ResultButton onClick={resultQuestion}>
-        정답 확인 <Image src={'/imgs/Wolfgang.png'} alt='' width={30} height={30} />
+      <ResultButton onClick={resultQuestion(chatBtnCurrent)}>
+        다음 문제 <Image src={'/imgs/Wolfgang.png'} alt='' width={30} height={30} />
       </ResultButton>
     </QuestionsContainer>
   );
