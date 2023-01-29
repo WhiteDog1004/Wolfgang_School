@@ -1,6 +1,6 @@
 import { SchoolLobby } from '@/components/SchoolLobby';
 
-export default function Home() {
+export default function School() {
   return (
     <>
       <SchoolLobby />

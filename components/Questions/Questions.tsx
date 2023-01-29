@@ -31,7 +31,13 @@ export const Questions = ({ chatBtnCurrent }: ChatCurrentType) => {
   const resultQuestion = (chatBtnCurrent: number) => () => {
     if (resultCheck) {
       if (chatBtnCurrent === 7) {
-        router.push('/');
+        router.push(
+          {
+            pathname: '/school/[id]',
+            query: { id: 1 },
+          },
+          '/school/1'
+        );
         setResultCheck(false);
       }
     }
