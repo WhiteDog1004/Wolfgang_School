@@ -6,7 +6,12 @@ import {
   QuestionsTitleBlock,
   QuestionsTitleNumber,
 } from '@/components/Questions/Questions.styled';
-import { ExamContainer, ExamWrapper } from '@/components/SchoolExam/SchoolExam.styled';
+import {
+  ExamContainer,
+  ExamWrapper,
+  QuestionsNextButton,
+} from '@/components/SchoolExam/SchoolExam.styled';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -14,10 +19,12 @@ export default function SchoolExam() {
   const router = useRouter();
   const [questionCheck, setQuestionCheck] = useState<number>();
   const [resultCheck, setResultCheck] = useState<boolean>(false);
+  const [isCheck, setIsCheck] = useState<boolean>(false);
   const [isPageNumber, setIsPageNumber] = useState<number>(0);
 
   useEffect(() => {
     if (router.isReady) {
+      console.log(router);
       setIsPageNumber(Number(router.query.id) - 1);
     }
   }, [router]);
@@ -25,6 +32,7 @@ export default function SchoolExam() {
   const isClickedQuestion = useCallback(
     (index: number, result: number) => () => {
       setQuestionCheck(index);
+      setIsCheck(true);
       if (index === result - 1) {
         setResultCheck(true);
       } else {
@@ -33,6 +41,10 @@ export default function SchoolExam() {
     },
     []
   );
+
+  const nextQuestion = useCallback(() => {
+    router.push((Number(router.query.id) + 1).toString());
+  }, [router]);
 
   return (
     <ExamContainer>
@@ -50,6 +62,11 @@ export default function SchoolExam() {
             <QuestionsContent>{quiz}</QuestionsContent>
           </QuestionsContentBlock>
         ))}
+        {
+          <QuestionsNextButton onClick={nextQuestion} disabled={!isCheck} isCheck={isCheck}>
+            다음 문제 <Image src={'/imgs/Wolfgang.png'} alt='' width={30} height={30} />
+          </QuestionsNextButton>
+        }
       </ExamWrapper>
     </ExamContainer>
   );

@@ -33,4 +33,20 @@ export const QuestionValue = <QuestionValueType[]>[
     question: ['1번 - 1단계', '2번 - 2단계', '3번 - 3단계', '4번 - 4단계', '5번 - 5단계'],
     questionResult: 3,
   },
+  {
+    id: 3,
+    name: 'potion',
+    questionNumber: '2번 문제',
+    questionTitle: `스매시 레전드의 랭크 '플래티넘'은 몇 단계까지 있을까?`,
+    question: ['1번 - 1단계', '2번 - 2단계', '3번 - 3단계', '4번 - 4단계', '5번 - 5단계'],
+    questionResult: 3,
+  },
+  {
+    id: 4,
+    name: 'potion',
+    questionNumber: '2번 문제',
+    questionTitle: `스매시 레전드의 랭크 '플래티넘'은 몇 단계까지 있을까?`,
+    question: ['1번 - 1단계', '2번 - 2단계', '3번 - 3단계', '4번 - 4단계', '5번 - 5단계'],
+    questionResult: 3,
+  },
 ];
