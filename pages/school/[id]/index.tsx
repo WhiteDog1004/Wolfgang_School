@@ -24,7 +24,6 @@ export default function SchoolExam() {
 
   useEffect(() => {
     if (router.isReady) {
-      console.log(router);
       setIsPageNumber(Number(router.query.id) - 1);
     }
   }, [router]);
