@@ -1,7 +1,14 @@
 import { useStore } from '@/store';
+import Image from 'next/image';
 import { useEffect } from 'react';
-import { QuestionValue } from '../Questions/Questions.const';
-import { MarkContainer, MarkTestBox } from './Mark.styled';
+import { scoreTier, scoreTierText } from './Mark.const';
+import {
+  MarkContainer,
+  MarkScore,
+  MarkScoreText,
+  MarkTierImageBox,
+  MarkTierText,
+} from './Mark.styled';
 
 export const Mark = () => {
   const { resultScore, resultNumber } = useStore();
@@ -13,12 +20,19 @@ export const Mark = () => {
 
   return (
     <MarkContainer>
-      {QuestionValue.map((value, index) => (
+      <MarkScore>
+        <MarkScoreText>{resultScore}점</MarkScoreText>
+      </MarkScore>
+      <MarkTierImageBox>
+        <Image src={scoreTier(resultScore)} alt='' width={100} height={100} />
+        <MarkTierText>{scoreTierText(resultScore)}</MarkTierText>
+      </MarkTierImageBox>
+      {/* {QuestionValue.map((value, index) => (
         <MarkTestBox key={value.id}>
           {value.id}
           {value.questionResult === resultNumber[index] ? <>O</> : <>X</>}
         </MarkTestBox>
-      ))}
+      ))} */}
     </MarkContainer>
   );
 };
