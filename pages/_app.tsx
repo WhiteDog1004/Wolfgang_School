@@ -1,6 +1,7 @@
 import { Loading } from '@/components/Loading';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import Router from 'next/router';
 import 'nprogress/nprogress.css';
 import { useEffect, useState } from 'react';
@@ -26,5 +27,14 @@ export default function App({ Component, pageProps }: AppProps) {
       Router.events.off('routeChangeError', end);
     };
   }, []);
-  return loading ? <Loading /> : <Component {...pageProps} />;
+  return loading ? (
+    <Loading />
+  ) : (
+    <>
+      <Head>
+        <link rel='shortcut icon' href='/favicon.ico' />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
