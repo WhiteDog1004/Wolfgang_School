@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { isCheckType } from './SchoolExam.types';
 
 export const ExamContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,6 +11,7 @@ export const ExamContainer = styled.div`
   padding: 10px;
 `;
 export const ExamWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -66,4 +68,32 @@ export const QuestionsNextButton = styled.button<isCheckType>`
           }
         `
       : ''}
+`;
+
+export const CurrentPageBox = styled.div`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: center;
+  width: 70px;
+`;
+export const CurrentPageText = styled.span`
+  font-size: 20px;
+  color: white;
+`;
+export const CurrentPageGaugeBlock = styled.div`
+  width: 100%;
+  height: 5px;
+  background-color: transparent;
+  border: 1px solid white;
+`;
+export const CurrentPageGauge = styled.div`
+  height: 100%;
+  background-color: white;
+`;
+export const ResultRate = styled.span`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
 `;
