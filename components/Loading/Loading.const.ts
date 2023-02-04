@@ -1,6 +1,6 @@
 export const umbra = [
-  '/imgs/Flare.png',
   '/imgs/Wolfgang.png',
+  '/imgs/Flare.png',
   '/imgs/Ravi.png',
   '/imgs/Molly.png',
   '/imgs/Red.png',

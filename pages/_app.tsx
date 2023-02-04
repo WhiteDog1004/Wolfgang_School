@@ -19,11 +19,11 @@ export default function App({ Component, pageProps }: AppProps) {
     const getResult = async () => {
       // getDocs로 컬렉션안에 데이터 가져오기
       const data = await getDocs(usersCollectionRef);
-      console.log(data);
+      // console.log(data);
     };
 
     getResult();
-  }, []);
+  }, [usersCollectionRef]);
 
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
