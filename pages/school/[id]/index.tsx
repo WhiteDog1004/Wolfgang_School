@@ -25,10 +25,6 @@ export default function SchoolExam() {
   const { resultScore, increaseScore, resultNumber, resultArr } = useStore();
 
   useEffect(() => {
-    console.log(resultScore, questionCheck, resultNumber);
-  }, [resultScore, questionCheck, resultNumber]);
-
-  useEffect(() => {
     if (router.isReady) {
       setIsPageNumber(Number(router.query.id) - 1);
     }
@@ -50,17 +46,18 @@ export default function SchoolExam() {
 
   // 다음 문제 클릭
   const nextQuestion = useCallback(() => {
-    // 마지막문제일 때, 점수, 배열 확인할 수 있도록
-    if (Number(router.query.id) === 20) {
-      return alert('마지막 문제입니다');
-    }
     if (resultCheck) {
       increaseScore(resultScore);
     }
     if (questionCheck !== undefined) {
-      resultArr([...resultNumber, questionCheck]);
+      resultArr([...resultNumber, questionCheck + 1]);
     } else {
       return alert('알수없는 오류가 발생했습니다. 다시 문항을 골라주세요.');
+    }
+
+    if (Number(router.query.id) === 20) {
+      router.push('/school/result');
+      return;
     }
     router.push((Number(router.query.id) + 1).toString());
   }, [router, resultScore, resultCheck, resultNumber, questionCheck, increaseScore, resultArr]);
