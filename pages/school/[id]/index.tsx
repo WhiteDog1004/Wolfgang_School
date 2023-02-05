@@ -94,7 +94,7 @@ export default function SchoolExam() {
       }
     };
     const currentResult = allResultData.filter(resultData);
-    setPerResultData(Math.floor((currentResult.length / allResultData.length) * 100));
+    return setPerResultData(Math.floor((currentResult.length / allResultData.length) * 100));
   }, [router, allResultData]);
 
   return (

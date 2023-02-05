@@ -5,14 +5,8 @@ export const QuestionTest = [
     id: 0,
     name: 'test',
     questionNumber: '1번 문제',
-    questionTitle: '정답은 4번입니다. 몇번이 정답일까요?',
-    question: [
-      '1번 - 몇번이 정답일까요?',
-      '2번 - 몇번이 정답일까요?',
-      '3번 - 몇번이 정답일까요?',
-      '4번 - 몇번이 정답일까요?',
-      '5번 - 몇번이 정답일까요?',
-    ],
+    questionTitle: '다음 중 공격수인 레전드는?',
+    question: ['1번 - 쿠레나이', '2번 - 용용', '3번 - 신디', '4번 - 피터', '5번 - 레드'],
     questionResult: 4,
   },
 ];
