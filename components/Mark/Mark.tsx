@@ -1,6 +1,6 @@
 import { useStore } from '@/store';
 import Image from 'next/image';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { QuestionValue } from '../Questions/Questions.const';
 import { onSaveToImg, scoreTier, scoreTierText } from './Mark.const';
 import {
@@ -29,11 +29,6 @@ export const Mark = () => {
   const { resultScore, resultNumber } = useStore();
   const [isWrongScreen, setIsWrongScreen] = useState<boolean>(false);
   const [isWrongNumber, setIsWrongNumber] = useState<number>(0);
-
-  useEffect(() => {
-    console.log(`자신이 찍은 번호들 : ${resultNumber}`);
-    console.log(`자신의 점수 : ${resultScore}`);
-  }, [resultNumber, resultScore]);
 
   const handleWrongAddNumber = useCallback(() => {
     if (QuestionValue.length - 1 <= isWrongNumber) return;
@@ -74,7 +69,7 @@ export const Mark = () => {
                         ? QuestionValue[isWrongNumber].questionResult ===
                           resultNumber[isWrongNumber]
                           ? '#1ddb16cc'
-                          : '#FF00DD'
+                          : '#FF0000'
                         : '',
                   }}
                 >

@@ -97,3 +97,10 @@ export const ResultRate = styled.span`
   right: 20px;
   font-size: 12px;
 `;
+export const QuizSuppot = styled.span`
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: #ffffff;
+`;

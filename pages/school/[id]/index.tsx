@@ -14,6 +14,7 @@ import {
   ExamContainer,
   ExamWrapper,
   QuestionsNextButton,
+  QuizSuppot,
   ResultRate,
 } from '@/components/SchoolExam/SchoolExam.styled';
 import { db } from '@/firebase-config';
@@ -125,6 +126,7 @@ export default function SchoolExam() {
           </QuestionsNextButton>
         }
       </ExamWrapper>
+      <QuizSuppot>문제 출제: NakGwanLon</QuizSuppot>
     </ExamContainer>
   );
 }

@@ -16,7 +16,6 @@ export default function Result() {
         result: resultNumber,
         score: resultScore,
       });
-      console.log(postResults);
     } catch (e) {
       console.log('error: ', e);
     }

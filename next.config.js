@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+
+  images: {
+    unoptimized: true,
+    domains: ['s3.ap-northeast-2.amazonaws.com'],
+  },
   distDir: 'build',
   reactStrictMode: false,
-  images: {
-    loader: 'imgix',
-    path: ['http://wolfgang.co.kr/'],
-  },
 
   async redirects() {
     return [

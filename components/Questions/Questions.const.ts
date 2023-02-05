@@ -69,7 +69,7 @@ export const QuestionValue = <QuestionValueType[]>[
     id: 7,
     name: 'jumpstep',
     questionNumber: '7번 문제',
-    questionTitle: `점령전에서 점프대를 밟으면 해당 플레이어가 점령지에 날아가는데, 이때 플레이어가 실행중인 모든 행동이 취소된다.`,
+    questionTitle: `점령전에서 점프대를 밟으면 해당 플레이어가 점령지에 날아가는데, 이때 플레이어가 실행중인 모든 행동이 강제로 취소된다.`,
     question: ['O', 'X'],
     questionResult: 1,
   },
