@@ -161,7 +161,7 @@ export const QuestionValue = <QuestionValueType[]>[
     id: 17,
     name: 'mode',
     questionNumber: '17번 문제',
-    questionTitle: `점령지 점수 3점을 획득하고, 4점을 획득할때 적이 점령지 내에 있다면 끝내기 시간이 발생한다. 이때 일정시간 점령지에서 상대를 몰아내야 게임을 끝낼 수 있는데, 이때 게임을 끝내기까지 걸리는 시간은 점령지 점령시간과 동일하다.`,
+    questionTitle: `점령지 점수 3점을 획득하고, 4점을 획득할때 적이 점령지 내에 있다면 끝내기 시간이 발생한다. 이때 일정시간 점령지에서 상대를 몰아내야 게임을 끝낼 수 있는데, 이때 게임을 끝내기까지 걸리는 시간은 1초이다.`,
     question: ['O', 'X'],
     questionResult: 1,
   },
