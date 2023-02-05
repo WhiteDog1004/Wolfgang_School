@@ -66,11 +66,11 @@ export default function SchoolExam() {
     }
 
     if (Number(router.query.id) === 20) {
-      router.push('/school/result');
+      router.replace('/school/result');
       return;
     }
     setAllResultData([]);
-    router.push((Number(router.query.id) + 1).toString());
+    router.replace((Number(router.query.id) + 1).toString());
   }, [router, resultScore, resultCheck, resultNumber, questionCheck, increaseScore, resultArr]);
 
   //파이어베이스 데이터 가져오기

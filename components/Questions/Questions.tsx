@@ -1,3 +1,4 @@
+import { useStore } from '@/store';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -18,6 +19,7 @@ export const Questions = ({ chatBtnCurrent }: ChatCurrentType) => {
   const router = useRouter();
   const [questionCheck, setQuestionCheck] = useState<number>();
   const [resultCheck, setResultCheck] = useState<boolean>(false);
+  const { resetScore, resetArr } = useStore();
 
   const isClickedQuestion = (index: number, result: number) => () => {
     setQuestionCheck(index);
@@ -31,7 +33,9 @@ export const Questions = ({ chatBtnCurrent }: ChatCurrentType) => {
   const resultQuestion = (chatBtnCurrent: number) => () => {
     if (resultCheck) {
       if (chatBtnCurrent === 7) {
-        router.push(
+        resetArr();
+        resetScore();
+        router.replace(
           {
             pathname: '/school/[id]',
             query: { id: 1 },
