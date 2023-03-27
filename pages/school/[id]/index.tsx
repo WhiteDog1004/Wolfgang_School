@@ -15,8 +15,11 @@ import {
   ExamWrapper,
   QuestionsNextButton,
   QuizSuppot,
+  ResultRate,
 } from '@/components/SchoolExam/SchoolExam.styled';
+import { db } from '@/firebase-config';
 import { useStore } from '@/store';
+import { collection, getDocs } from 'firebase/firestore';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
@@ -71,29 +74,28 @@ export default function SchoolExam() {
   }, [router, resultScore, resultCheck, resultNumber, questionCheck, increaseScore, resultArr]);
 
   //파이어베이스 데이터 가져오기
-  // useEffect(() => {
-  //   const dataResult = async () => {
-  //     const query = await getDocs(collection(db, 'QuizResult'));
-  //     query.forEach((doc) => {
-  //       setAllResultData((allResultData) => [
-  //         ...allResultData,
-  //         doc.data().result[Number(router.query.id) - 1],
-  //       ]);
-  //     });
-  //   };
-  //   dataResult();
-  // }, [router]);
+  useEffect(() => {
+    const dataResult = async () => {
+      const query = await getDocs(collection(db, 'QuizResult'));
+      query.forEach((doc) => {
+        setAllResultData((allResultData) => [
+          ...allResultData,
+          doc.data().result[Number(router.query.id) - 1],
+        ]);
+      });
+    };
+    dataResult();
+  }, [router]);
 
-  // 너무 많이 부름. 수정필요
-  // useEffect(() => {
-  //   const resultData = (result: number) => {
-  //     if (result === QuestionValue[Number(router.query.id) - 1].questionResult) {
-  //       return true;
-  //     }
-  //   };
-  //   const currentResult = allResultData.filter(resultData);
-  //   return setPerResultData(Math.floor((currentResult.length / allResultData.length) * 100));
-  // }, [router, allResultData]);
+  useEffect(() => {
+    const resultData = (result: number) => {
+      if (result === QuestionValue[Number(router.query.id) - 1].questionResult) {
+        return true;
+      }
+    };
+    const currentResult = allResultData.filter(resultData);
+    return setPerResultData(Math.floor((currentResult.length / allResultData.length) * 100));
+  }, [router, allResultData]);
 
   return (
     <ExamContainer>
@@ -105,7 +107,7 @@ export default function SchoolExam() {
       </CurrentPageBox>
       <ExamWrapper>
         <QuestionsTitleBlock>
-          {/* <ResultRate>정답률 {perResultData ? perResultData : '0'}%</ResultRate> */}
+          <ResultRate>정답률 {perResultData ? perResultData : '0'}%</ResultRate>
           <QuestionsTitleNumber>{QuestionValue[isPageNumber].questionNumber}</QuestionsTitleNumber>
           <QuestionsTitle>{QuestionValue[isPageNumber].questionTitle}</QuestionsTitle>
         </QuestionsTitleBlock>
