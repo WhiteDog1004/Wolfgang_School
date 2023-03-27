@@ -1,7 +1,6 @@
 ## Wolfgang_School
 'Smash Legends' Game<br/>
 유저들이 얼마나 게임에 대한 정보를 알고있는지 확인하고자 만든 Quiz 사이트입니다.<br/>
-[볼프강 시험장](http://wolfgang.co.kr "볼프강 시험장")
 
 ## Use Stack
 - <img src="https://img.shields.io/badge/NextJs-000000?style=flat-square&logo=Next.js&logoColor=white"/>
