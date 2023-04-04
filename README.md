@@ -6,7 +6,7 @@
 - <img src="https://img.shields.io/badge/NextJs-000000?style=flat-square&logo=Next.js&logoColor=white"/>
 - <img src="https://img.shields.io/badge/Styled Components-DB7093?style=flat-square&logo=styled-components&logoColor=white"/>
 - <img src="https://img.shields.io/badge/Nprogress-007ACC?style=flat-square&logoColor=white"/>
-- <img src="https://img.shields.io/badge/Pritter-FF4785?style=flat-square&logoColor=white"/>
-- <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black"/>
-- <img src="https://img.shields.io/badge/Zustand-000000?style=flat-square&logoColor=white"/>
+- <img src="https://img.shields.io/badge/Prittier-FF4785?style=flat-square&logo=prittier&Color=white"/>
+- <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=white"/>
+- <img src="https://img.shields.io/badge/Zustand-000000?style=flat-square&logo=zustand&Color=white"/>
 - <img src="https://img.shields.io/badge/Html2canvas-E34F26?style=flat-square&logoColor=white"/>
